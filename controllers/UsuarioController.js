@@ -127,11 +127,7 @@ class UsuarioController {
             return res.json({
                 usuario: usuario.enviarAuthJson()
             })
-        }).catch((err)=>{
-            console.log(err)
-            next(err)
-        })
-
+        }).catch(next)
     }
 
     showRecovery(req, res, next) {

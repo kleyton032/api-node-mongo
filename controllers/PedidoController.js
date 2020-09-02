@@ -149,7 +149,7 @@ class PedidoController {
             if(!await CarrinhoValidation(carrinho)) return res.status(422).send({ error: "Carrinho Inválido" });
             
             const cliente = await Cliente.findOne({usuario: req.payload.id}).populate({path:"usuario", "select": "_id nome email"});
-            
+            console.log(cliente)
             if(!await QuantidadeValidation.validarQuantidadeDisponivel(carrinho)) return res.status(400).send({error: "Produto(s) não tem quantidade disponível"})
 
             //CHECAR DADOS DE ENTREGA

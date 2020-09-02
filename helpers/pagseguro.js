@@ -1,5 +1,5 @@
 const request = require('request');
-const xmlParser = require('xml2json');
+const xmlParser = require('xml2js');
 
 const pagseguro = function(params) {
     this.email = params.email;
